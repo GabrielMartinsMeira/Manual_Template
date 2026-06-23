@@ -1,0 +1,390 @@
+/* ==========================================================================
+   THEME.CSS — Dark / Light theme variables and transitions
+   ========================================================================== */
+
+/* =========================
+   1. BASE VARIABLES
+   ========================= */
+body[data-bs-theme="light"] {
+  --bs-body-bg: #f8f9fa;
+  --bs-body-color: #212529;
+  --bs-card-bg: #ffffff;
+  --bs-border-color: #dee2e6;
+
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+body[data-bs-theme="dark"] {
+  --bs-body-bg: #1c1c1c;
+  --bs-body-color: #ededed;
+  --bs-card-bg: #232323;
+  --bs-border-color: #3e3e3e;
+
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+/* =========================
+   2. DARK MODE — Manual Content Text Override
+   ========================= */
+body[data-bs-theme="dark"] .manual-content,
+body[data-bs-theme="dark"] .manual-content p,
+body[data-bs-theme="dark"] .manual-content div,
+body[data-bs-theme="dark"] .manual-content strong,
+body[data-bs-theme="dark"] .manual-content ul,
+body[data-bs-theme="dark"] .manual-content li,
+body[data-bs-theme="dark"] .manual-content span,
+body[data-bs-theme="dark"] .manual-content table,
+body[data-bs-theme="dark"] .manual-content th,
+body[data-bs-theme="dark"] .manual-content td {
+  color: #ffffff !important;
+}
+
+/* =========================
+   3. GLOBAL THEME TRANSITIONS
+   Note: #sidebar is intentionally excluded — its transform/opacity
+   transitions are managed in sidebar.css and must not be overwritten.
+   ========================= */
+body,
+#header-row,
+#sidebar .sidebar-header,
+#sidebar .sidebar-header p,
+.card,
+.section,
+.content-section,
+.offcanvas,
+.form-control,
+#search-bar .btn-outline-secondary,
+#product-name-div p,
+button,
+a,
+.manual-title-main,
+.manual-title-sub,
+.manual-content,
+.manual-content table,
+.manual-content code {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* =========================
+   4. HEADER ROW
+   ========================= */
+body[data-bs-theme="light"] #header-row {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+body[data-bs-theme="dark"] #header-row {
+  background-color: #232323;
+  color: #ededed;
+  border-bottom: 1px solid #3e3e3e;
+}
+
+body[data-bs-theme="dark"] #header-row button,
+body[data-bs-theme="dark"] #header-row input,
+body[data-bs-theme="dark"] #header-row a,
+body[data-bs-theme="dark"] #header-row .dropdown-menu {
+  color: #ededed;
+  background-color: #232323;
+  border-color: #3e3e3e;
+}
+
+#header-row {
+  border-bottom: 1px solid var(--bs-border-color);
+  z-index: 1040;
+}
+
+/* =========================
+   5. SIDEBAR THEME COLORS
+   ========================= */
+body[data-bs-theme="light"] #sidebar {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+body[data-bs-theme="light"] #sidebar .sidebar-header,
+body[data-bs-theme="light"] #sidebar .sidebar-header p {
+  background-color: #f8f9fa;
+  color: #212529 !important;
+}
+
+body[data-bs-theme="dark"] #sidebar {
+  background-color: #232323;
+  color: #ededed;
+  border-right: 1px solid #3e3e3e;
+}
+
+body[data-bs-theme="dark"] #sidebar .sidebar-header,
+body[data-bs-theme="dark"] #sidebar .sidebar-header p {
+  background-color: #232323;
+  color: #ededed !important;
+}
+
+body[data-bs-theme="dark"] #sidebar .nav-link,
+body[data-bs-theme="dark"] #sidebar a {
+  color: #ffffff;
+}
+
+/* =========================
+   6. OFFCANVAS / SEARCH BAR
+   ========================= */
+body[data-bs-theme="light"] #search-bar .btn-outline-secondary {
+  background-color: #ffffff;
+  color: #212529;
+  border-color: #dee2e6;
+}
+
+body[data-bs-theme="dark"] #search-bar .btn-outline-secondary {
+  background-color: #232323;
+  color: #ededed;
+  border-color: #3e3e3e;
+}
+
+body[data-bs-theme="dark"] #search-bar .btn-outline-secondary:hover {
+  background-color: #2a2a2a;
+  color: #ededed;
+}
+
+#search-collapse {
+  top: 100%;
+  width: 350px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+body[data-bs-theme="light"] #search-collapse {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+body[data-bs-theme="dark"] #search-collapse {
+  background-color: rgba(28, 28, 28, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+}
+
+body[data-bs-theme="dark"] #search-collapse .text-body,
+body[data-bs-theme="dark"] #search-collapse .form-check-label {
+  color: #ffffff !important;
+}
+
+body[data-bs-theme="dark"] #search-collapse .form-control {
+  background-color: #232323 !important;
+  color: #ffffff !important;
+  border-color: #3e3e3e !important;
+}
+
+body[data-bs-theme="dark"] #search-collapse .form-control::placeholder {
+  color: #cccccc !important;
+}
+
+#search-bar .form-check-label {
+  cursor: pointer;
+}
+
+#search-btn {
+  padding: 0.4rem 1rem;
+}
+
+/* =========================
+   7. PRODUCT NAME & HEADER ELEMENTS
+   ========================= */
+body[data-bs-theme="light"] #product-name-div p {
+  color: #212529;
+}
+
+body[data-bs-theme="dark"] #product-name-div p {
+  color: #ffffff;
+}
+
+#header-img {
+  height: 22px;
+}
+
+#languageDropdown {
+  padding: 0.4rem 0.8rem;
+}
+
+#languageDropdown:hover,
+#languageDropdown:focus,
+#languageDropdown:active,
+#languageDropdown.show,
+.show>#languageDropdown {
+  background-color: transparent !important;
+  color: inherit !important;
+  box-shadow: none !important;
+}
+
+body[data-bs-theme="dark"] #languageDropdown:hover,
+body[data-bs-theme="dark"] #languageDropdown:focus,
+body[data-bs-theme="dark"] #languageDropdown:active,
+body[data-bs-theme="dark"] #languageDropdown.show,
+body[data-bs-theme="dark"] .show>#languageDropdown {
+  background-color: #2a2a2a !important;
+  color: #ededed !important;
+}
+
+body[data-bs-theme="light"] .theme-switch-icon.sun-icon {
+  color: #FFD700;
+}
+
+body[data-bs-theme="dark"] .theme-switch-icon.sun-icon {
+  color: #888;
+}
+
+body[data-bs-theme="light"] .theme-switch-icon.moon-icon {
+  color: #888;
+}
+
+body[data-bs-theme="dark"] .theme-switch-icon.moon-icon {
+  color: #fff;
+}
+
+/* =========================
+   8. THEME TOGGLE BUTTON
+   ========================= */
+body[data-bs-theme="light"] #theme-toggle-btn {
+  background-color: #ffffff;
+  color: #212529;
+  border: 1px solid #6c757d;
+}
+
+body[data-bs-theme="light"] #theme-toggle-btn:hover {
+  background-color: #e9ecef;
+}
+
+body[data-bs-theme="dark"] #theme-toggle-btn {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body[data-bs-theme="dark"] #theme-toggle-btn:hover {
+  background-color: #333;
+}
+
+/* =========================
+   9. CARDS / CONTENT SECTIONS
+   ========================= */
+body[data-bs-theme="light"] .manual-type-heading {
+  color: #2d3748;
+}
+
+body[data-bs-theme="dark"] .manual-type-heading {
+  color: #fff;
+}
+
+.content-section {
+  background-color: var(--bs-body-bg);
+  padding: 0.5rem;
+}
+
+.card {
+  background-color: var(--bs-card-bg);
+  color: var(--bs-body-color);
+  border-color: var(--bs-border-color);
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .card a {
+  color: #24b47e !important;
+}
+
+[data-bs-theme="light"] .card a {
+  color: #212529 !important;
+}
+
+/* =========================
+   10. FORM CONTROLS
+   ========================= */
+body[data-bs-theme="dark"] .form-control,
+body[data-bs-theme="dark"] .form-control:focus {
+  background-color: #1c1c1c;
+  color: #ededed;
+  border-color: #3e3e3e;
+  box-shadow: 0 0 0 0.2rem rgba(36, 180, 126, 0.25);
+}
+
+/* =========================
+   11. DARK MODE ICON INVERSION
+   ========================= */
+body[data-bs-theme="dark"] img[src*="warning-icon.png"],
+body[data-bs-theme="dark"] img[src*="anatel-icon.png"],
+body[data-bs-theme="dark"] img[src*="hint-icon.png"],
+body[data-bs-theme="dark"] img[src*="directional-signal.png"],
+body[data-bs-theme="dark"] .btn-close {
+  filter: invert(1) brightness(1.2);
+}
+
+/* =========================
+   12. TABLES (DARK MODE)
+   ========================= */
+body[data-bs-theme="dark"] table {
+  color: #ededed !important;
+  border-color: #3e3e3e !important;
+  background-color: transparent !important;
+}
+
+body[data-bs-theme="dark"] table th,
+body[data-bs-theme="dark"] table td {
+  background-color: transparent !important;
+  color: #ededed !important;
+  border-color: #3e3e3e !important;
+}
+
+body[data-bs-theme="dark"] table thead th {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid #3e3e3e !important;
+}
+
+body[data-bs-theme="dark"] table tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+body[data-bs-theme="dark"] table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* =========================
+   13. TABLES (LIGHT MODE)
+   ========================= */
+body[data-bs-theme="light"] table tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+body[data-bs-theme="light"] table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* =========================
+   14. SCROLLBARS (DARK MODE)
+   ========================= */
+body[data-bs-theme="dark"] {
+  scrollbar-color: #3e3e3e #1c1c1c; /* Firefox */
+}
+
+body[data-bs-theme="dark"] ::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+body[data-bs-theme="dark"] ::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+
+body[data-bs-theme="dark"] ::-webkit-scrollbar-thumb {
+  background-color: #3e3e3e;
+  border-radius: 10px;
+  border: 3px solid #1c1c1c;
+}
+
+body[data-bs-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background-color: #555555;
+}

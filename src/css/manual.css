@@ -1,0 +1,386 @@
+/* ==========================================================================
+   MANUAL.CSS — Manual content typography, tables, code blocks, images
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* =========================
+   1. CSS VARIABLES
+   ========================= */
+:root {
+  --manual-text-color: #1a1a1a;
+  --manual-table-header-bg: #d1d3d6;
+  --manual-table-header-text: #000;
+  --manual-table-row-header-bg: #e9ecef;
+  --manual-table-row-header-text: #000;
+  --manual-table-border-color: #eaeaea;
+  --manual-table-bg: #f3f3f3;
+}
+
+[data-bs-theme="dark"] {
+  --manual-text-color: #e0e0e0;
+  --manual-table-header-bg: #404e68;
+  --manual-table-header-text: #fff;
+  --manual-table-row-header-bg: #2d3748;
+  --manual-table-row-header-text: #fff;
+  --manual-table-border-color: #333;
+  --manual-table-bg: #22272e;
+}
+
+/* =========================
+   2. MANUAL SECTION — Container
+   ========================= */
+.manual-section {
+  max-width: 100%;
+  margin: 0 auto 3rem auto;
+  padding: 0 3rem;
+  color: var(--manual-text-color);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+[data-bs-theme="dark"] .manual-section {
+  color: #e0e0e0;
+}
+
+/* =========================
+   3. HEADER STYLING — Main Sections (1., 2., 3.)
+   ========================= */
+.manual-header-main {
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #00a94d;
+}
+
+[data-bs-theme="dark"] .manual-header-main {
+  border-bottom-color: #00a94d;
+}
+
+.manual-title-main {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00a94d;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+[data-bs-theme="dark"] .manual-title-main {
+  color: #00a94d;
+}
+
+/* =========================
+   4. HEADER STYLING — Subsections (1.1, 1.2...)
+   ========================= */
+.manual-header-sub {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: none;
+}
+
+.manual-title-sub {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+[data-bs-theme="dark"] .manual-title-sub {
+  color: #e0e0e0;
+}
+
+/* =========================
+   5. CONTENT TYPOGRAPHY
+   ========================= */
+.manual-content {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #333;
+  letter-spacing: -0.01em;
+}
+
+[data-bs-theme="dark"] .manual-content {
+  color: #b0b0b0;
+}
+
+/* Headings within content */
+.manual-content h1,
+.manual-content h2,
+.manual-content h4 {
+  color: #111;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+[data-bs-theme="dark"] .manual-content h1,
+[data-bs-theme="dark"] .manual-content h2,
+[data-bs-theme="dark"] .manual-content h3,
+[data-bs-theme="dark"] .manual-content h4 {
+  color: #fff;
+}
+
+.manual-content h4 {
+  font-size: 1.15rem;
+  color: #111;
+}
+
+/* Paragraphs */
+.manual-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* =========================
+   6. LINKS
+   ========================= */
+.manual-content a {
+  color: #00a94d;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.manual-content a:hover {
+  border-bottom-color: #00a94d;
+}
+
+/* =========================
+   7. LISTS
+   ========================= */
+.manual-content ul,
+.manual-content ol {
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.manual-content li {
+  margin-bottom: 0.75rem;
+}
+
+.manual-content li::marker {
+  color: #00a94d;
+}
+
+/* =========================
+   8. TABLES
+   ========================= */
+.manual-content table {
+  width: 100%;
+  margin: 2.5rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--manual-text-color);
+  background-color: var(--manual-table-bg);
+}
+
+.manual-content th,
+.manual-content td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--manual-table-border-color);
+  text-align: left;
+}
+
+.manual-content th {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: #666;
+  letter-spacing: 0.05em;
+}
+
+[data-bs-theme="dark"] .manual-content th {
+  color: #888;
+}
+
+/* =========================
+   9. CODE BLOCKS
+   ========================= */
+
+[data-bs-theme="dark"] .manual-content pre {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.manual-content code {
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  color: #c7254e;
+}
+
+[data-bs-theme="dark"] .manual-content code {
+  color: #e06c75;
+}
+
+/* =========================
+   10. IMAGES
+   ========================= */
+.manual-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 3rem 0;
+  display: block;
+}
+
+.manual-content table img {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================
+   11. MOBILE MEDIA QUERIES
+   ========================= */
+@media (max-width: 768px) {
+  .manual-section {
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .manual-title-main {
+    font-size: 1.4rem;
+  }
+
+  .manual-title-sub {
+    font-size: 1.15rem;
+  }
+
+  .manual-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .manual-content h1 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .manual-content h2 {
+    font-size: 1.15rem;
+    margin-top: 1.3rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .manual-content h4 {
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .manual-content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1rem 0;
+  }
+
+  .manual-content th,
+  .manual-content td {
+    padding: 0.5rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .manual-content img {
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .manual-section {
+    padding: 0 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .manual-title-main {
+    font-size: 1.2rem;
+  }
+
+  .manual-title-sub {
+    font-size: 1.05rem;
+  }
+
+  .manual-content {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .manual-content h1 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .manual-content h2 {
+    font-size: 1.1rem;
+    margin-top: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .manual-content h4 {
+    font-size: 0.9rem;
+    margin-top: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .manual-content th,
+  .manual-content td {
+    padding: 0.4rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* ==========================================================================
+   12. REFACTORING — CSS CLASSES FOR SCREENSHOTS & ICONS
+   ========================================================================== */
+.manual-content .screenshot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.manual-content .screenshot-img {
+  max-width: 100%;
+  width: 1200px;
+  height: auto;
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.manual-content .screenshot-img-md {
+  max-width: 100%;
+  width: 800px;
+  height: auto;
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.manual-content .screenshot-img-sm {
+  max-width: 100%;
+  width: 600px;
+  height: auto;
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.manual-content .screenshot-caption {
+  font-size: 0.9em;
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.manual-content .manual-inline-icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: auto;
+  margin: 0;
+}
+
+.manual-content .manual-inline-icon-modify {
+  width: 40px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
