@@ -1,0 +1,10 @@
+{
+  "short_name": "Manual Template",
+  "name": "Manual Template",
+  "description": "Manual Template",
+  "icons": [],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#00a94d",
+  "background_color": "#ffffff"
+}
