@@ -1,0 +1,303 @@
+/* ==========================================================================
+   PRINT.CSS — Print-only styles for PDF export
+   Always produces black text on white background, in any theme.
+   ========================================================================== */
+
+@media print {
+
+  /* -------------------------------------------------------
+     1. HIDE NON-CONTENT ELEMENTS
+     ------------------------------------------------------- */
+  #sidebar,
+  #sidebar-overlay,
+  #header-row,
+  #scroll-top-btn,
+  .CTAs,
+  .export-btn,
+  .btn-close {
+    display: none !important;
+  }
+
+  /* -------------------------------------------------------
+     2. RESET LAYOUT — Break out of viewport-locked layout
+     ------------------------------------------------------- */
+  html,
+  body {
+    font-size: 8pt !important;
+    line-height: 1.4 !important;
+    color: #000 !important;
+    background: #fff !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  #wrapper {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: visible !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #main-container {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: visible !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #content {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: visible !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .container-fluid {
+    max-width: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .manual-container {
+    display: block !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  /* -------------------------------------------------------
+     3. FORCE BLACK TEXT + WHITE BG — Dark theme overrides
+     These selectors match the specificity of theme.css and
+     manual.css dark-mode rules so they always win in print.
+     ------------------------------------------------------- */
+
+  /* — body-level dark overrides (theme.css §1, §2) — */
+  body[data-bs-theme="dark"],
+  body[data-bs-theme="dark"] #header-row,
+  body[data-bs-theme="dark"] #header-row button,
+  body[data-bs-theme="dark"] #header-row input,
+  body[data-bs-theme="dark"] #header-row a,
+  body[data-bs-theme="dark"] #header-row .dropdown-menu,
+  body[data-bs-theme="dark"] #product-name-div p,
+  body[data-bs-theme="dark"] #sidebar,
+  body[data-bs-theme="dark"] #sidebar .sidebar-header,
+  body[data-bs-theme="dark"] #sidebar .sidebar-header p,
+  body[data-bs-theme="dark"] #sidebar .nav-link,
+  body[data-bs-theme="dark"] #sidebar a {
+    color: #000 !important;
+    background-color: #fff !important;
+  }
+
+  /* — manual content text (theme.css §2) — */
+  body[data-bs-theme="dark"] .manual-content,
+  body[data-bs-theme="dark"] .manual-content p,
+  body[data-bs-theme="dark"] .manual-content div,
+  body[data-bs-theme="dark"] .manual-content strong,
+  body[data-bs-theme="dark"] .manual-content ul,
+  body[data-bs-theme="dark"] .manual-content li,
+  body[data-bs-theme="dark"] .manual-content span,
+  body[data-bs-theme="dark"] .manual-content h1,
+  body[data-bs-theme="dark"] .manual-content h2,
+  body[data-bs-theme="dark"] .manual-content h3,
+  body[data-bs-theme="dark"] .manual-content h4 {
+    color: #000 !important;
+  }
+
+  /* — manual content tables (theme.css §12, manual.css) — */
+  body[data-bs-theme="dark"] .manual-content table,
+  body[data-bs-theme="dark"] .manual-content th,
+  body[data-bs-theme="dark"] .manual-content td,
+  body[data-bs-theme="dark"] table,
+  body[data-bs-theme="dark"] table th,
+  body[data-bs-theme="dark"] table td,
+  body[data-bs-theme="dark"] table thead th {
+    color: #000 !important;
+    background-color: #fff !important;
+    border-color: #ccc !important;
+  }
+
+  /* — manual section container (manual.css) — */
+  [data-bs-theme="dark"] .manual-section,
+  [data-bs-theme="dark"] .manual-title-sub,
+  [data-bs-theme="dark"] .manual-content {
+    color: #000 !important;
+    border-color: #000 !important;
+  }
+
+  [data-bs-theme="dark"] .manual-title-main,
+  [data-bs-theme="dark"] .manual-header-main {
+    color: #00a94d !important;
+  }
+
+  /* — code blocks (manual.css) — */
+  [data-bs-theme="dark"] .manual-content pre {
+    background-color: #f8f9fa !important;
+    border-color: #e1e1e1 !important;
+  }
+
+  [data-bs-theme="dark"] .manual-content code {
+    color: #c7254e !important;
+  }
+
+  /* — cards (theme.css §9) — */
+  [data-bs-theme="dark"] .card,
+  [data-bs-theme="dark"] .card a,
+  [data-bs-theme="dark"] .card-title,
+  [data-bs-theme="dark"] .list-group-item {
+    color: #000 !important;
+    background-color: #fff !important;
+    border-color: #ccc !important;
+  }
+
+  /* — forms (theme.css §10) — */
+  body[data-bs-theme="dark"] .form-control,
+  body[data-bs-theme="dark"] .form-control:focus {
+    color: #000 !important;
+    background-color: #fff !important;
+    border-color: #ccc !important;
+  }
+
+  /* — search collapse (theme.css §6) — */
+  body[data-bs-theme="dark"] #search-collapse,
+  body[data-bs-theme="dark"] #search-collapse .text-body,
+  body[data-bs-theme="dark"] #search-collapse .form-check-label,
+  body[data-bs-theme="dark"] #search-collapse .form-control {
+    color: #000 !important;
+    background-color: #fff !important;
+  }
+
+  /* — dark mode icon inversion off (theme.css §11) — */
+  body[data-bs-theme="dark"] img[src*="warning-icon.png"],
+  body[data-bs-theme="dark"] img[src*="anatel-icon.png"],
+  body[data-bs-theme="dark"] img[src*="hint-icon.png"],
+  body[data-bs-theme="dark"] img[src*="directional-signal.png"],
+  body[data-bs-theme="dark"] .btn-close {
+    filter: none !important;
+  }
+
+  /* -------------------------------------------------------
+     4. LIGHT-MODE PRINT TYPOGRAPHY
+     ------------------------------------------------------- */
+  h1 {
+    font-size: 14pt !important;
+    color: #000 !important;
+  }
+
+  h2 {
+    font-size: 12pt !important;
+    color: #000 !important;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 9pt !important;
+    color: #000 !important;
+  }
+
+  p,
+  li,
+  span,
+  a,
+  td,
+  th {
+    font-size: 8pt !important;
+    color: #000 !important;
+  }
+
+  .manual-section {
+    padding: 0 !important;
+    color: #000 !important;
+  }
+
+  .manual-title-main {
+    color: #00a94d !important;
+  }
+
+  /* -------------------------------------------------------
+     5. DISABLE TRANSITIONS + SHADOWS
+     ------------------------------------------------------- */
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* -------------------------------------------------------
+     6. PAGE BREAK CONTROLS
+     ------------------------------------------------------- */
+  h1,
+  h2,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  p,
+  ul,
+  ol {
+    orphans: 3;
+    widows: 3;
+    page-break-inside: avoid;
+  }
+
+  table,
+  .card {
+    page-break-inside: avoid !important;
+  }
+
+  img {
+    page-break-inside: avoid !important;
+    max-width: 100% !important;
+  }
+
+  /* -------------------------------------------------------
+     7. TABLE STYLING FOR PRINT
+     ------------------------------------------------------- */
+  .manual-content table {
+    border-collapse: collapse !important;
+    background: #fff !important;
+  }
+
+  .manual-content th {
+    background: #e9ecef !important;
+    color: #000 !important;
+    border: 1px solid #aaa !important;
+  }
+
+  .manual-content td {
+    border: 1px solid #ccc !important;
+  }
+
+  /* -------------------------------------------------------
+     8. SECTION-SPECIFIC SPACING
+     ------------------------------------------------------- */
+
+  /* -------------------------------------------------------
+     9. PAGE SETUP
+     ------------------------------------------------------- */
+  @page {
+    size: A4;
+    margin: 2cm;
+  }
+}

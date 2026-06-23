@@ -1,0 +1,108 @@
+/* ─── Base card (rendered as <button> for full a11y) ────────────────────── */
+.manual-type-card {
+  /* button reset — removes browser default appearance */
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+  padding: 0;
+
+  /* card appearance */
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  /* smooth lift on hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+}
+
+.manual-type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyboard focus ring — visible only for keyboard navigation, not mouse clicks */
+.manual-type-card:focus-visible {
+  outline: 3px solid #00a261;
+  outline-offset: 3px;
+}
+
+/* ─── Dark-mode variant ──────────────────────────────────────────────────── */
+.manual-type-card--dark {
+  background-color: #1a1d20;
+  color: #f8f9fa;
+}
+
+/* ─── Card body ──────────────────────────────────────────────────────────── */
+.manual-type-card__body {
+  padding: 3rem;
+  /* equivalent to Bootstrap p-5 */
+}
+
+/* ─── Icon circle ────────────────────────────────────────────────────────── */
+.manual-type-card__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #00a261;
+  color: #00a261;
+  font-size: 2rem;
+  background-color: #fff;
+  margin-bottom: 1.5rem;
+  /* mb-4 */
+}
+
+.manual-type-card__icon--dark {
+  background-color: rgba(0, 162, 97, 0.1);
+}
+
+/* ─── Title ──────────────────────────────────────────────────────────────── */
+.manual-type-card__title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 0.75rem;
+  /* mb-3 */
+}
+
+.manual-type-card__title--dark {
+  color: #f8f9fa;
+}
+
+/* ─── Description ────────────────────────────────────────────────────────── */
+.manual-type-card__description {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #6c757d;
+  /* Bootstrap text-muted */
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .manual-type-card__body {
+    padding: 1.25rem;
+  }
+  .manual-type-card__title {
+    font-size: 1rem;
+  }
+  .manual-type-card__description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .manual-type-card__icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}
